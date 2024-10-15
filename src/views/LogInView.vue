@@ -1,26 +1,26 @@
 <template>
   <div class="login-container">
-    <h2>Login</h2>
-    <form @submit.prevent="handleLogin">
-      <label for="identifier">Usuário ou E-mail:</label>
+    <h2 class="h2">Login</h2>
+    <form @submit.prevent="handleLogin" class="form">
+     <div class="Linha"> <label for="identifier" class="Id">Usuário ou E-mail:</label> <br><br>
       <input
         type="text"
         id="identifier"
         v-model="identifier"
         placeholder="Digite seu usuário ou e-mail"
         required
-      />
+      /></div><br><br>
 
-      <label for="password">Senha:</label>
+      <div class="Linha"><label for="password">Senha:</label><br><br>
       <input
         type="password"
         id="password"
         v-model="password"
         placeholder="Digite sua senha"
         required
-      />
+      /></div><br>
 
-      <button type="submit">Entrar</button>
+      <button type="submit" class="Entrar">Entrar</button>
     </form>
 
     <div v-if="message" class="message">{{ message }}</div>
@@ -66,13 +66,14 @@ const handleLogin = async () => {
 
 <style scoped>
 .login-container {
-  background-color: #BCBCBC;
+  background-color: #e6e6e6;
   padding: 20px;
-  border-radius: 8px;
+  border-radius: 0px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   width: 300px;
+  height: 500px;
   margin: auto;
-  margin-top: 50px;
+  margin-top: 150px;
 }
 
 .login-container input {
@@ -109,5 +110,17 @@ input {
   border-radius: 4px;
   box-sizing: border-box;
 }
-
+ h2{
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 30px;
+ }
+form{
+  margin-top: 70px;
+}
+.Linha{
+  padding-bottom: 10px;
+  text-align: left;
+  font-size: 19px;
+  font-family:serif
+}
 </style>
